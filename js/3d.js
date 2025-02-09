@@ -24,7 +24,7 @@ function init3D() {
 
     // Carregando o modelo 3D
     const loader = new THREE.GLTFLoader();
-    loader.load('../models/eu.glb', (gltf) => {
+    loader.load('https://github.com/edlus2/portifolio/raw/refs/heads/main/models/eu.glb', (gltf) => {
         model = gltf.scene;
         scene.add(model);
 
