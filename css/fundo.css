@@ -1,0 +1,53 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    background-color: #332e6c;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.bola-grande {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    background-color: #ffffff2c;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.bolinhas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.bolinha {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ffffff1c;
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: piscar 2s infinite ease-in-out;
+}
+
+@keyframes piscar {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}

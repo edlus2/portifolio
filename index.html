@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/fundo.css">   
+
+    <!-- Carregar Three.js e o GLTFLoader do CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+
+    
+</head>
+<body>
+    </div>
+    <div class="container">
+        <div class="bola-grande"></div>
+        <div class="bolinhas">
+        <div class="background"></div>
+        <div class="content">
+            <div class="header">
+                <div class="tab" data-tab="home">Home</div>
+                <div class="tab" data-tab="formacao">Formação</div>
+                <div class="tab" data-tab="sobre">Sobre Mim</div>
+                <div class="tab" data-tab="projetos">Projetos</div>
+            </div>
+            <div class="main-content">
+                <div id="home" class="tab-content active">
+                    <div class="about-me">
+                        <h2>Sobre Mim</h2>
+                        <p>Olá! Me chamo Edgar e tenho 28 anos. No ano de 2023, finalizei meu curso de tecnólogo em Análise e Desenvolvimento de Sistemas. Atualmente, estou trabalhando na área industrial, mas estou buscando novas oportunidades no campo da tecnologia. Tenho paixão por desenvolvimento de software e análise de sistemas, e estou animado para explorar novas possibilidades nesse setor. Estou pronto para aplicar minhas habilidades e conhecimentos adquiridos durante minha formação e experiência profissional anterior. Mal posso esperar para fazer parte de uma equipe inovadora e contribuir para projetos empolgantes no mundo da tecnologia.</p>
+                    </div>
+                    <div id="3d-container">
+                        <!-- Modelo 3D -->
+                        <div id="3d-boneco"></div>
+                    </div>
+                </div>
+                <div id="formacao" class="tab-content">
+                    <h2>Formação</h2>
+                    <p>Informações sobre minha formação...</p>
+                </div>
+                <div id="sobre" class="tab-content">
+                    <h2>Sobre Mim</h2>
+                    <p>Mais informações sobre mim...</p>
+                </div>
+                <div id="projetos" class="tab-content">
+                    <h2>Projetos</h2>
+                    <div class="projects-grid">
+                        <div class="project">Projeto 1</div>
+                        <div class="project">Projeto 2</div>
+                        <div class="project">Projeto 3</div>
+                        <div class="project">Projeto 4</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Codigos Javascrip-->
+    <script src="./js/script.js"></script>
+    <script defer src="./js/3d.js"></script>
+    <script src="./js/bolinhas.js"></script>
+</body>
+</html>
