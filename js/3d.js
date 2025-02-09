@@ -24,24 +24,24 @@ function init3D() {
 
     // Carregando o modelo 3D
     const loader = new THREE.GLTFLoader();
-    loader.load('https://github.com/edlus2/portifolio/raw/refs/heads/main/models/eu.glb', (gltf) => {
-        model = gltf.scene;
-        scene.add(model);
+loader.load('https://raw.githubusercontent.com/edlus2/portifolio/main/models/eu.glb', (gltf) => {
+    model = gltf.scene;
+    scene.add(model);
 
-        model.scale.set(0.04, 0.04, 0.04);
-        model.position.set(0, -1, 0); // Ajuste a posição do modelo
+    model.scale.set(0.04, 0.04, 0.04);
+    model.position.set(0, -1, 0); // Ajuste a posição do modelo
 
-        if (gltf.animations && gltf.animations.length > 0) {
-            mixer = new THREE.AnimationMixer(model);
-            const action = mixer.clipAction(gltf.animations[0]);
-            action.play();
-        }
+    if (gltf.animations && gltf.animations.length > 0) {
+        mixer = new THREE.AnimationMixer(model);
+        const action = mixer.clipAction(gltf.animations[0]);
+        action.play();
+    }
 
-        animate();
-    }, undefined, (error) => {
-        console.error('Erro ao carregar o modelo 3D:', error);
-    });
-}
+    animate();
+}, undefined, (error) => {
+    console.error('Erro ao carregar o modelo 3D:', error);
+});
+}       
 
 // Função para animação contínua
 function animate() {
