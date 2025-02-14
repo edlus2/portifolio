@@ -78,7 +78,6 @@ body, html {
     
 }
 
-
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -94,7 +93,15 @@ body, html {
 }
 .sobremim{
     margin: auto;
-    color: wheat;
+    color: rgb(255, 255, 255);
+    width: 800px; 
+    text-align: justify;
+    font: 2em sans-serif;
+}
+
+.formacao{
+    margin: auto;
+    color: rgb(255, 255, 255);
     width: 800px; 
     text-align: justify;
     font: 2em sans-serif;
