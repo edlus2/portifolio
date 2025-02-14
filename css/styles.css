@@ -92,3 +92,10 @@ body, html {
     color: white;
     text-align: center;
 }
+.sobremim{
+    margin: auto;
+    color: wheat;
+    width: 800px; 
+    text-align: justify;
+    font: 2em sans-serif;
+}
