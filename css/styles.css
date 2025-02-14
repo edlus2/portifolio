@@ -106,3 +106,13 @@ body, html {
     text-align: justify;
     font: 2em sans-serif;
 }
+
+.projeto{
+    text-align: center;
+    width: 800px;   
+    height: 80vh; 
+}
+
+.projeto > div{
+    height: 80%;
+}
