@@ -1,118 +1,275 @@
-body, html {
+/* Reset básico */
+* {
     margin: 0;
     padding: 0;
-    height: 100%;
-    overflow: hidden;
-    font-family: Arial, sans-serif;
+    box-sizing: border-box;
 }
 
-.container {
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.background {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
+/* Tema escuro */
+body.dark-theme {
+    background-color: #1a1a1a;
+    color: #f9f9f9;
 }
 
-.content {
-    overflow: hidden;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-    height: 80%;
-    background: linear-gradient(135deg, #6b11cb00, #2574fc00); /* Gradiente */
-    border-radius: 20px;
-    box-shadow: 0 0 20px rgb(255, 255, 255);
-    padding: 20px;
+.dark-theme header {
+    background-color: #111;
 }
 
-.header {
+.dark-theme .project-card {
+    background-color: #222;
+    color: #f9f9f9;
+}
+
+.dark-theme .btn {
+    background-color: #1abc9c;
+    color: #fff;
+}
+
+.dark-theme .btn:hover {
+    background-color: #16a085;
+}
+
+.dark-theme footer {
+    background-color: #111;
+}
+
+/* Header e navegação */
+header {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav {
     display: flex;
-    justify-content: space-around;
-    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #1abc9c;
+}
+
+.theme-toggle {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+}
+
+.theme-switch-label {
+    cursor: pointer;
+    font-size: 14px;
+    color: #fff;
+}
+
+.dark-theme .theme-switch-label {
+    color: #f9f9f9;
+}
+
+#theme-switch {
+    display: none;
+}
+
+#theme-switch + .theme-switch-label::before {
+    content: '';
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 10px;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+#theme-switch:checked + .theme-switch-label::before {
+    background-color: #1abc9c;
+}
+
+#theme-switch + .theme-switch-label::after {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    transition: transform 0.3s ease;
+}
+
+#theme-switch:checked + .theme-switch-label::after {
+    transform: translateX(20px);
+}
+
+/* Hero section */
+.hero {
+    background: linear-gradient(135deg, #3498db, #1abc9c);
+    color: #fff;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 48px;
     margin-bottom: 20px;
 }
 
-.tab {
-    cursor: pointer;
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
     padding: 10px 20px;
-    background-color: rgba(255, 255, 255, 0.337);
-    border-radius: 10px;
-    color: white;
-    transition: background-color 0.3s;
+    background-color: #1abc9c;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-.tab:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+.btn:hover {
+    background-color: #16a085;
 }
 
-.about-me > h2{
-    text-align: center;
-    font-size: 2vw;
+.model {
+    margin: 0; /* Use 0 em vez de 'none' para margin */
+    padding: 0;
+    height: 500px;
+    width: auto;
+    background-image: url(../img/campo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; /* Alterado de 'contain' para 'cover' */
 }
-.about-me{
-    width: 500px;
-    font-size: 1vw;
+
+canvas {
+    display: block;
+    margin: auto;  
+}
+
+/* Sobre, Portfólio e Contato */
+.about, .portfolio, .contact {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
     text-align: justify;
 }
 
-.tab-content {
-
-    display: none;
-    color: rgb(255, 255, 255);
-}
-
-.tab-content.active {
-    flex: 1; /* Cada quadrado ocupa 50% da tela */
-    display: flex;
-    justify-content: center; /* Alinha o texto horizontalmente */
-    align-items: center; /* Alinha o texto verticalmente */
-    font-size: 1vh;
-    
+.about h2, .portfolio h2, .contact h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
 }
 
-.project {
-    background-color: rgba(255, 255, 255, 0.1);
+.project-card {
+    background-color: #fff;
     padding: 20px;
     border-radius: 10px;
-    color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-}
-.sobremim{
-    margin: auto;
-    color: rgb(255, 255, 255);
-    width: 800px; 
-    text-align: justify;
-    font: 2em sans-serif;
+    transition: transform 0.3s ease;
 }
 
-.formacao{
-    margin: auto;
-    color: rgb(255, 255, 255);
-    width: 800px; 
-    text-align: justify;
-    font: 2em sans-serif;
+.project-card:hover {
+    transform: translateY(-10px);
 }
 
-.projeto{
+.project-card img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.project-card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact input, .contact textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: #fff;
     text-align: center;
-    width: 800px;   
-    height: 80vh; 
+    padding: 20px 0;
+    margin-top: 60px;
 }
 
-.projeto > div{
-    height: 80%;
+.social-links {
+    margin-bottom: 10px;
+}
+
+.social-links a {
+    color: #fff;
+    font-size: 24px;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #1abc9c;
 }

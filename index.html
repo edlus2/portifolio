@@ -3,88 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edgar - Portifólio</title>
-    <link rel="shortcut icon" href="./models/favicon.ico">
+    <title>Portfólio Edgar</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/fundo.css">   
-
-    <!-- Carregar Three.js e o GLTFLoader do CDN -->
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script> 
 </head>
 <body>
-    </div>
-    <div class="container">
-        <div class="bola-grande"></div>
-        <div class="bolinhas">
-        <div class="background"></div>
-        <div class="content">
-            <div class="header">
-                <div class="tab" data-tab="home">Home</div>
-                <div class="tab" data-tab="formacao">Formação</div>
-                <div class="tab" data-tab="sobre">Sobre Mim</div>
-                <div class="tab" data-tab="projetos">Projetos</div>
+    <header>
+        <nav>
+            <div class="logo"><img src="img/favicon.ico" alt="image portifolio"></div>
+            <ul class="nav-links">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#portfolio">Portfólio</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <input type="checkbox" id="theme-switch">
+                <label for="theme-switch" class="theme-switch-label">
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon"></i>
+                </label>
             </div>
-            <div class="main-content">
-                <div id="home" class="tab-content active">
-                    <div class="about-me">
-                        <h2>Sobre Mim</h2>
-                        <p>Olá! Me chamo Edgar e tenho 28 anos. No ano de 2023, finalizei meu curso de tecnólogo em Análise e Desenvolvimento de Sistemas. Atualmente, estou trabalhando na área industrial, mas estou buscando novas oportunidades no campo da tecnologia. Tenho paixão por desenvolvimento de software e análise de sistemas, e estou animado para explorar novas possibilidades nesse setor. Estou pronto para aplicar minhas habilidades e conhecimentos adquiridos durante minha formação e experiência profissional anterior. Mal posso esperar para fazer parte de uma equipe inovadora e contribuir para projetos empolgantes no mundo da tecnologia.</p>
-                    </div>
-                    <div id="3d-container">
-                        <!-- Modelo 3D -->
-                        <div id="3d-boneco"></div>
-                    </div>
-                </div>
-                <div id="formacao" class="tab-content">
-                    <div class="formacao">
-                        <h2>Formação</h2>
-                        <ul>
-                            <li>Análise e Desenvolvimento de Sistemas – (Curso concluído)</li>
-                            <li>Curso de HTML e CSS – (Concluído)</li>
-                            <li>Curso de JavaScript Básico – (Concluído)</li>
-                            <li>Curso de MySQL Básico – (Concluído)</li>
-                            <li>Curso de Python Intermediário – (Em andamento)</li>
-                        </ul>
-                        <p>Além disso, tenho experiência com Visual Studio Code e PyCharm, e conhecimentos em tecnologia 3D, onde realizo projetos autorais.</p>
-                    </div>
-                </div>
-                <div id="sobre" class="tab-content">
-                    <div class="sobremim">
-                    <h2>Sobre Mim</h2>
-                    <p>Olá! Meu nome é Edgar da Silva Peixoto e, atualmente, trabalho como Assistente Administrativo de Produção. Sempre fui apaixonado por tecnologia e, desde cedo, explorei o mundo da computação, buscando aprender tudo o que pudesse sobre programação. Meu objetivo é ingressar no mercado de tecnologia e evoluir constantemente nessa área.
+        </nav>
+    </header>
 
-                        Tenho experiência com HTML, CSS, JavaScript, Git e GitHub, além de conhecimentos básicos em MySQL. No momento, estou aprofundando meus estudos em Python para expandir minhas habilidades.</p>
-                    <h3>Metas e Diferenciais</h3>
-                    <ul>
-                        <li>Metas para o futuro: Quero me especializar em Python e aprimorar meu conhecimento no inglês para alcançar mais oportunidades na área de tecnologia.</li>
-                        <li>Meu diferencial: Nunca desisto. Sempre persisto até encontrar a solução que estou buscando, enfrentando desafios com determinação e foco.</li>
-                    </ul>
-                    <p>Ao lado, você pode conferir alguns dos projetos em que trabalhei. Fique à vontade para entrar em contato e trocar ideias!</p>
-                    <p>contato</p>
-                    </div>
-                </div>
-                <div id="projetos" class="tab-content">
-                    <div class="projeto">
-                        <div class="projects-grid">
-                            <div class="project"><a href="">1</a></div>
-                            <div class="project"><a href="">2</a></div>
-                            <div class="project"><a href="">3</a></div>
-                            <div class="project"><a href="">4</a></div>
-                            <div class="project"><a href="">5</a></div>
-                            <div class="project"><a href="">6</a></div>
-                            <div class="project"><a href="">7</a></div>
-                            <div class="project"><a href="">8</a></div>
-                        </div>
-                    </div>
-                </div>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Olá, eu sou Edgar</h1>
+            <p>Desenvolvedor Web | Designer Criativo 3D </p>
+            <a href="#portfolio" class="btn">Ver Projetos</a>
+        </div>
+    </section>
+
+
+    <section id="about" class="about">
+        <h2>Sobre Mim</h2>
+        <p>Olá! Me chamo Edgar e tenho 28 anos. No ano de 2023, finalizei meu curso de tecnólogo em Análise e Desenvolvimento de Sistemas. Atualmente, estou trabalhando na área industrial, mas estou buscando novas oportunidades no campo da tecnologia. Tenho paixão por desenvolvimento de software e análise de sistemas, e estou animado para explorar novas possibilidades nesse setor. Estou pronto para aplicar minhas habilidades e conhecimentos adquiridos durante minha formação e experiência profissional anterior. Mal posso esperar para fazer parte de uma equipe inovadora e contribuir para projetos empolgantes no mundo da tecnologia.</p>
+    </section>
+
+    <div class="model">
+        <!-- Modelo 3D -->
+        <div id="boneco"></div>
+    </div>
+    
+    <section id="portfolio" class="portfolio">
+        <h2>Portfólio</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="project1.jpg" alt="Projeto 1">
+                <h3>Projeto 1</h3>
+                <p>Descrição breve do projeto.</p>
+                <a href="#" class="btn">Ver Detalhes</a>
+            </div>
+            <div class="project-card">
+                <img src="project2.jpg" alt="Projeto 2">
+                <h3>Projeto 2</h3>
+                <p>Descrição breve do projeto.</p>
+                <a href="#" class="btn">Ver Detalhes</a>
+            </div>
+            <div class="project-card">
+                <img src="project3.jpg" alt="Projeto 3">
+                <h3>Projeto 3</h3>
+                <p>Descrição breve do projeto.</p>
+                <a href="#" class="btn">Ver Detalhes</a>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Codigos Javascrip-->
-    <script src="./js/script.js"></script>
-    <script defer src="./js/3d.js"></script>
-    <script src="./js/bolinhas.js"></script>
+    <section id="contact" class="contact">
+        <h2>Contato</h2>
+        <form action="#" method="post">
+            <input type="text" name="name" placeholder="Seu Nome" required>
+            <input type="email" name="email" placeholder="Seu Email" required>
+            <textarea name="message" placeholder="Sua Mensagem" required></textarea>
+            <button type="submit" class="btn">Enviar Mensagem</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/edlus2" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/edlus2/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p>&copy; 2025 Edgar Peixoto. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js/dark.js"></script>
+    <script defer src="js/3d.js"></script>
 </body>
 </html>

@@ -12,7 +12,7 @@ function init3D() {
     renderer = new THREE.WebGLRenderer({ alpha: true }); // `alpha: true` permite transparência
     renderer.setSize(500, 500); // Define o tamanho do renderizador
     renderer.setClearColor(0x000000, 0); // Torna o fundo transparente
-    document.getElementById("boneco").appendChild(renderer.domElement);
+    document.getElementById("3d-boneco").appendChild(renderer.domElement);
 
     // Adicionando luz à cena
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
@@ -28,8 +28,8 @@ loader.load('https://raw.githubusercontent.com/edlus2/portifolio/main/models/eu.
     model = gltf.scene;
     scene.add(model);
 
-    model.scale.set(0.05, 0.05, 0.05);
-    model.position.set(0, 0, 0); // Ajuste a posição do modelo
+    model.scale.set(0.04, 0.04, 0.04);
+    model.position.set(0, -1, 0); // Ajuste a posição do modelo
 
     if (gltf.animations && gltf.animations.length > 0) {
         mixer = new THREE.AnimationMixer(model);
@@ -51,6 +51,15 @@ function animate() {
     if (mixer) {
         mixer.update(0.03); // Atualiza as animações (o valor é o deltaTime)
     }
+    
+
+    // Rotação e movimento do modelo
+    if (model) {
+        model.rotation.y += 0.01; // Rotação contínua
+
+        // Movimento oscilatório no eixo Y
+        model.position.y = Math.sin(Date.now() * 0.001) * 0; // Oscila entre -0.5 e 0.5 no eixo Y
+    }
 
     renderer.render(scene, camera);
 }
@@ -58,21 +67,4 @@ function animate() {
 // Inicializa o 3D quando o DOM estiver pronto
 document.addEventListener('DOMContentLoaded', (event) => {
     init3D();
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    const tabs = document.querySelectorAll('.tab');
-    const tabContents = document.querySelectorAll('.tab-content');
-
-    tabs.forEach(tab => {
-        tab.addEventListener('click', function() {
-            const target = this.getAttribute('data-tab');
-
-            tabContents.forEach(content => {
-                content.classList.remove('active');
-            });
-
-            document.getElementById(target).classList.add('active');
-        });
-    });
 });

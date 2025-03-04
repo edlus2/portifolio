@@ -1,0 +1,118 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.content {
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 80%;
+    background: linear-gradient(135deg, #6b11cb00, #2574fc00); /* Gradiente */
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgb(255, 255, 255);
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.tab {
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.337);
+    border-radius: 10px;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.tab:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.about-me > h2{
+    text-align: center;
+    font-size: 2vw;
+}
+.about-me{
+    width: 500px;
+    font-size: 1vw;
+    text-align: justify;
+}
+
+.tab-content {
+
+    display: none;
+    color: rgb(255, 255, 255);
+}
+
+.tab-content.active {
+    flex: 1; /* Cada quadrado ocupa 50% da tela */
+    display: flex;
+    justify-content: center; /* Alinha o texto horizontalmente */
+    align-items: center; /* Alinha o texto verticalmente */
+    font-size: 1vh;
+    
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.project {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+}
+.sobremim{
+    margin: auto;
+    color: rgb(255, 255, 255);
+    width: 800px; 
+    text-align: justify;
+    font: 2em sans-serif;
+}
+
+.formacao{
+    margin: auto;
+    color: rgb(255, 255, 255);
+    width: 800px; 
+    text-align: justify;
+    font: 2em sans-serif;
+}
+
+.projeto{
+    text-align: center;
+    width: 800px;   
+    height: 80vh; 
+}
+
+.projeto > div{
+    height: 80%;
+}
