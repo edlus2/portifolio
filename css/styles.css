@@ -199,6 +199,14 @@ canvas {
     text-align: center;
 }
 
+.sobre {
+    text-align: center;
+    align-items: center;
+    display: flex;
+}
+.sobre img{
+height: 500px;
+}
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
