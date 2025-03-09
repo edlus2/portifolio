@@ -203,9 +203,25 @@ canvas {
     text-align: center;
     align-items: center;
     display: flex;
+    flex-direction: row-reverse; /* Alinha os elementos horizontalmente */
+    justify-content: center; /* Centraliza os elementos horizontalmente */
+    gap: 20px; /* Adiciona um espaço entre a imagem e o texto */
 }
-.sobre img{
-height: 500px;
+
+.sobre img {
+    height: 500px;
+}
+
+/* Media query para telas menores */
+@media (max-width: 900px) {
+    .sobre {
+        flex-direction: column; /* Alinha os elementos verticalmente */
+    }
+
+    .sobre img {
+        height: auto; /* Ajusta a altura da imagem para se adaptar ao layout */
+        max-width: 100%; /* Garante que a imagem não ultrapasse a largura da tela */
+    }
 }
 .projects-grid {
     display: grid;
