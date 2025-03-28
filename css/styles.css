@@ -291,6 +291,104 @@ canvas {
     }
 }
 
+.tecnologias {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #3498db, #1abc9c);
+    color: #ffffff;
+}
+
+.tecnologias h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.tecnologias-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.tecnologia-item {
+    background: #282a36;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 120px;
+    height: 120px; /* Defini altura fixa para manter quadrado */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Garante que nada vaze para fora */
+}
+
+.tecnologia-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.4);
+}
+
+.tecnologia-item i {
+    font-size: 2.5rem; /* Reduzi um pouco para caber melhor */
+    margin-bottom: 5px;
+    color: #1abc9c;
+    transition: color 0.3s ease;
+}
+
+.tecnologia-item p {
+    font-size: 0.9rem; /* Ajustei para caber no quadrado */
+    font-weight: bold;
+    color: #ffffff;
+    white-space: nowrap; /* Evita quebra de linha */
+    overflow: hidden; /* Esconde o que passar do tamanho */
+    text-overflow: ellipsis; /* Adiciona "..." se o nome for muito grande */
+    max-width: 100%; /* Garante que não ultrapasse a largura do quadrado */
+}
+
+/* Cores personalizadas para os ícones */
+.tecnologia-item:nth-child(1) i { color: #f7df1e; } /* JavaScript */
+.tecnologia-item:nth-child(2) i { color: #e34f26; } /* HTML5 */
+.tecnologia-item:nth-child(3) i { color: #3498db; } /* CSS3 */
+.tecnologia-item:nth-child(4) i { color: #1abc9c; } /* Python */
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .tecnologias-container {
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 550px) {
+    .tecnologias-container {
+        justify-content: center;
+    }
+
+    .tecnologia-item {
+        width: 100px;
+        height: 100px; /* Reduz para telas menores */
+    }
+
+    .tecnologia-item i {
+        font-size: 2rem; /* Ícones menores para encaixar melhor */
+    }
+
+    .tecnologia-item p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .tecnologias-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
