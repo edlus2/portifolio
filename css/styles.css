@@ -1,3 +1,71 @@
+/* Estilos do menu hamburguer */
+.menu-toggle {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 21px;
+    position: relative;
+    z-index: 1001;
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: #fff; /* Cor do ícone */
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Quando o menu estiver aberto */
+.menu-toggle:checked ~ .hamburger span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle:checked ~ .hamburger span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle:checked ~ .hamburger span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Responsividade - ajuste o valor conforme necessário */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: #1a1a1a; /* Cor de fundo do menu */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(-100%);
+        transition: transform 0.5s ease;
+        z-index: 1000;
+    }
+    
+    .menu-toggle:checked ~ .nav-links {
+        transform: translateX(0);
+    }
+    
+    .nav-links li {
+        margin: 15px 0;
+    }
+}
+
 /* Reset básico */
 * {
     margin: 0;
@@ -11,6 +79,7 @@ body {
     color: #333;
     background-color: #f9f9f9;
     transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
 }
 
 /* Tema escuro */
@@ -291,102 +360,72 @@ canvas {
     }
 }
 
-.tecnologias {
-    text-align: center;
+.tecnologias, .habilidades {
     padding: 50px 20px;
-    background: linear-gradient(135deg, #3498db, #1abc9c);
-    color: #ffffff;
+    text-align: center;
+    width: 100%;
+   
+    margin: auto;
 }
 
-.tecnologias h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #ffffff;
-}
-
-.tecnologias-container {
+.tecnologias-container, .habilidades-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 20px;
+    justify-content: center;
 }
 
-.tecnologia-item {
-    background: #282a36;
+.tecnologia-item, .habilidade-item {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
     padding: 20px;
-    border-radius: 10px;
     text-align: center;
-    width: 120px;
-    height: 120px; /* Defini altura fixa para manter quadrado */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    width: 150px;
+}
+
+.tecnologia-item:hover, .habilidade-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.tecnologia-item i, .habilidade-item i {
+    font-size: 50px;
+    margin-bottom: 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+.tecnologia-item p, .habilidade-item p {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.tecnologias, .habilidades {
+    background: linear-gradient(to right, #3498db, #1abc9c);
+    color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden; /* Garante que nada vaze para fora */
 }
 
-.tecnologia-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.4);
-}
+/* Mudar a cor apenas ao passar o mouse */
+.tecnologia-item:nth-child(1):hover i { color: #f7df1e; } /* JavaScript */
+.tecnologia-item:nth-child(2):hover i { color: #e34f26; } /* HTML5 */
+.tecnologia-item:nth-child(3):hover i { color: #1572b6; } /* CSS3 */
+.tecnologia-item:nth-child(4):hover i { color: #3776ab; } /* Python */
 
-.tecnologia-item i {
-    font-size: 2.5rem; /* Reduzi um pouco para caber melhor */
-    margin-bottom: 5px;
-    color: #1abc9c;
-    transition: color 0.3s ease;
-}
-
-.tecnologia-item p {
-    font-size: 0.9rem; /* Ajustei para caber no quadrado */
-    font-weight: bold;
-    color: #ffffff;
-    white-space: nowrap; /* Evita quebra de linha */
-    overflow: hidden; /* Esconde o que passar do tamanho */
-    text-overflow: ellipsis; /* Adiciona "..." se o nome for muito grande */
-    max-width: 100%; /* Garante que não ultrapasse a largura do quadrado */
-}
-
-/* Cores personalizadas para os ícones */
-.tecnologia-item:nth-child(1) i { color: #f7df1e; } /* JavaScript */
-.tecnologia-item:nth-child(2) i { color: #e34f26; } /* HTML5 */
-.tecnologia-item:nth-child(3) i { color: #3498db; } /* CSS3 */
-.tecnologia-item:nth-child(4) i { color: #1abc9c; } /* Python */
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .tecnologias-container {
-        justify-content: space-around;
-    }
-}
-
-@media (max-width: 550px) {
-    .tecnologias-container {
-        justify-content: center;
-    }
-
-    .tecnologia-item {
-        width: 100px;
-        height: 100px; /* Reduz para telas menores */
-    }
-
-    .tecnologia-item i {
-        font-size: 2rem; /* Ícones menores para encaixar melhor */
-    }
-
-    .tecnologia-item p {
-        font-size: 0.8rem;
-    }
-}
-
-@media (max-width: 400px) {
-    .tecnologias-container {
-        flex-direction: column;
-        align-items: center;
-    }
-}
+.habilidade-item:nth-child(1):hover i { color: #2ecc71; } /* Análise de Dados */
+.habilidade-item:nth-child(2):hover i { color: #e67e22; } /* Impressão 3D */
+.habilidade-item:nth-child(3):hover i { color: #8e44ad; } /* Modelagem 3D */
+.habilidade-item:nth-child(4):hover i { color: #3498db; } /* Trabalho em Equipe */
 
 
 .projects-grid {

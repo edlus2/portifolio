@@ -25,4 +25,11 @@ const themeSwitch = document.getElementById('theme-switch');
                 }
             });
         });
-        
+      
+
+        //Barra de navegador hamburgue
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('menu-toggle').checked = false;
+            });
+        });
