@@ -432,13 +432,22 @@ canvas {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
+    color: #ffffff00;
 }
 
 .card1{
-    background-image: url(../img/campo.png);
+    background-image: url(../img/3d.png);
+    background-position: center;
+    background-size: cover;
+
 }
 .card2{
     background-image: url(../img/Paraiso.png);
+    background-position: center;
+    background-size: cover;
+}
+.card3{
+    background-image: url(../img/projeto\ 3.png);
     background-position: center;
     background-size: cover;
 }
