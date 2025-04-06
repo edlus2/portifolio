@@ -24,12 +24,14 @@ function init3D() {
 
     // Carregando o modelo 3D
     const loader = new THREE.GLTFLoader();
-loader.load('https://raw.githubusercontent.com/edlus2/portifolio/main/models/eu.glb', (gltf) => {
+loader.load('../models/eu.glb', (gltf) => {
     model = gltf.scene;
     scene.add(model);
 
-    model.scale.set(0.05, 0.05, 0.05);
+    model.scale.set(3, 3, 3);
     model.position.set(0, 0, 0); // Ajuste a posição do modelo
+    model.position.set(0, -3, 0); // valor negativo desce o modelo
+    
 
     if (gltf.animations && gltf.animations.length > 0) {
         mixer = new THREE.AnimationMixer(model);
@@ -49,7 +51,7 @@ function animate() {
 
     // Atualiza o AnimationMixer (se existir)
     if (mixer) {
-        mixer.update(0.03); // Atualiza as animações (o valor é o deltaTime)
+        mixer.update(0.006); // Atualiza as animações (o valor é o deltaTime)
     }
 
     renderer.render(scene, camera);
