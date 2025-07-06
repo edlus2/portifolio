@@ -19,7 +19,6 @@
     height: 3px;
     width: 100%;
     background: #fff;
-/* Cor do ícone */
     border-radius: 3px;
     transition: all 0.3s ease;
 }
@@ -41,11 +40,11 @@
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
-        margin: 0 auto; /* Centraliza horizontalmente */
-        position: absolute; /* Permite posicionamento absoluto */
-        left: 50%; /* Move para o centro horizontal */
-        transform: translateX(-50%); /* Ajusta para centralizar perfeitamente */
-        top: 20px; /* Ajuste a distância do topo se necessário */
+        margin: 0 auto;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 20px;
     }
     
     .nav-links {
@@ -55,7 +54,6 @@
         width: 100%;
         height: 100vh;
         background: #1a1a1a;
-/* Cor de fundo do menu */
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -72,7 +70,6 @@
         margin: 15px 0;
     }
 
-    /* Se o nav for um flex container em telas menores, ajuste sua direção */
     nav {
         flex-direction: column;
         align-items: center;
@@ -100,7 +97,6 @@ body.dark-theme {
     background-color: #1a1a1a;
     color: #f9f9f9;
 }
-
 
 .dark-theme header {
     background-color: #111;
@@ -137,7 +133,6 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-/* Para ficar sobre os outros elementos */
 }
 
 nav {
@@ -150,7 +145,7 @@ nav {
 }
 
 .logo {
-    font-size: 24px;
+    font-size: 1.5rem; /* Era 24px */
     font-weight: 600;
 }
 
@@ -227,7 +222,7 @@ nav {
 /* Estilos para os botões de troca de idioma */
 .language-toggle {
     position: absolute;
-    right: 80px; /* Ajuste para não colidir com o theme-toggle */
+    right: 80px;
     top: 15px;
     display: flex;
     gap: 5px;
@@ -249,7 +244,7 @@ nav {
 }
 
 .language-toggle .lang-button.active {
-    background-color: #1abc9c; /* Cor para o idioma ativo */
+    background-color: #1abc9c;
     font-weight: bold;
 }
 
@@ -266,13 +261,12 @@ body.dark-theme .language-toggle .lang-button.active {
 /* Ajuste responsivo para os botões de idioma se necessário */
 @media (max-width: 768px) {
     .language-toggle {
-        position: static; /* Remove o posicionamento absoluto em telas menores */
-        margin: 10px auto; /* Centraliza abaixo do hambúrguer e tema */
-        order: 3; /* Define a ordem para aparecer depois do hambúrguer e tema no flexbox */
+        position: static;
+        margin: 10px auto;
+        order: 3;
         justify-content: center;
     }
 }
-
 
 /* Hero section */
 .hero {
@@ -283,12 +277,12 @@ body.dark-theme .language-toggle .lang-button.active {
 }
 
 .hero-content h1 {
-    font-size: 48px;
+    font-size: 3rem; /* Era 48px */
     margin-bottom: 20px;
 }
 
 .hero-content p {
-    font-size: 20px;
+    font-size: 1.25rem; /* Era 20px */
     margin-bottom: 30px;
 }
 
@@ -306,22 +300,6 @@ body.dark-theme .language-toggle .lang-button.active {
     background-color: #16a085;
 }
 
-.model {
-    margin: 0;
-    padding: 0;
-    height: 500px;
-    width: auto;
-    background: linear-gradient(135deg, #3498db, #1abc9c);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-canvas {
-    display: block;
-    margin: auto;
-}
-
 /* Sobre, Portfólio e Contato */
 .about, .portfolio, .contact {
     padding: 60px 20px;
@@ -331,7 +309,7 @@ canvas {
 }
 
 .about h2, .portfolio h2, .contact h2 {
-    font-size: 36px;
+    font-size: 2.25rem; /* Era 36px */
     margin-bottom: 20px;
     text-align: center;
 }
@@ -347,6 +325,8 @@ canvas {
 
 .sobre img {
     height: 500px;
+    max-width: 100%;
+    object-fit: cover;
 }
 
 /* Media query para telas menores */
@@ -358,6 +338,7 @@ canvas {
     .sobre img {
         height: auto;
         max-width: 100%;
+        max-height: 50vh;
     }
 }
 
@@ -468,7 +449,7 @@ canvas {
 }
 
 .tecnologia-item p, .habilidade-item p {
-    font-size: 18px;
+    font-size: 1.125rem; /* Era 18px */
     font-weight: bold;
     margin: 0;
 }
@@ -483,108 +464,435 @@ canvas {
 }
 
 /* Mudar a cor apenas ao passar o mouse */
-.tecnologia-item:nth-child(1):hover i { color: #f7df1e; } /* JavaScript */
-.tecnologia-item:nth-child(2):hover i { color: #e34f26; } /* HTML5 */
-.tecnologia-item:nth-child(3):hover i { color: #1572b6; } /* CSS3 */
-.tecnologia-item:nth-child(4):hover i { color: #3776ab; } /* Python */
+.tecnologia-item:nth-child(1):hover i { color: #f7df1e; }
+.tecnologia-item:nth-child(2):hover i { color: #e34f26; }
+.tecnologia-item:nth-child(3):hover i { color: #1572b6; }
+.tecnologia-item:nth-child(4):hover i { color: #3776ab; }
 
-.habilidade-item:nth-child(1):hover i { color: #2ecc71; } /* Análise de Dados */
-.habilidade-item:nth-child(2):hover i { color: #e67e22; } /* Impressão 3D */
-.habilidade-item:nth-child(3):hover i { color: #8e44ad; } /* Modelagem 3D */
-.habilidade-item:nth-child(4):hover i { color: #3498db; } /* Trabalho em Equipe */
+.habilidade-item:nth-child(1):hover i { color: #2ecc71; }
+.habilidade-item:nth-child(2):hover i { color: #e67e22; }
+.habilidade-item:nth-child(3):hover i { color: #8e44ad; }
+.habilidade-item:nth-child(4):hover i { color: #3498db; }
 
-
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    color: #ffffff00;
-}
-
-.card1{
-    background-image: url(../img/3d.png);
-    background-position: center;
-    background-size: cover;
-}
-.card2{
-    background-image: url(../img/Paraiso.png);
-    background-position: center;
-    background-size: cover;
-}
-.card3{
-    background-image: url(../img/projeto\ 3.png);
-    background-position: center;
-    background-size: cover;
-}
-.project-card {
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+/* Estilos para o Carrossel de Projetos (Antigo .projects-grid) */
+.portfolio {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
     text-align: center;
-    transition: transform 0.3s ease;
 }
 
-.project-card:hover {
-    transform: translateY(-10px);
-}
-
-.project-card img {
-    max-width: 100%;
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 900px;
+    margin: 40px auto;
     border-radius: 10px;
-    margin-bottom: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
 }
+
+.carousel-slide {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.project-card {
+    flex: 0 0 100%;
+    box-sizing: border-box;
+    padding: 40px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    background-color: #fff;
+    color: #333;
+}
+
+.project-card.card1 { background-image: url(../img/3d.png); background-position: center; background-size: cover; color: #fff; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); }
+.project-card.card2 { background-image: url(../img/Paraiso.png); background-position: center; background-size: cover; color: #fff; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); }
+.project-card.card3 { background-image: url(../img/projeto\ 3.png); background-position: center; background-size: cover; color: #fff; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); }
+/* Remova ou adicione suas próprias imagens para cards dinâmicos do GitHub */
+.project-card:not(.card1):not(.card2):not(.card3) { 
+    background-image: linear-gradient(135deg, #3498db, #1abc9c); /* Fundo padrão para projetos do GitHub */
+    color: #fff;
+    text-shadow: none;
+}
+
 
 .project-card h3 {
-    font-size: 24px;
+    font-size: 2.5rem;
     margin-bottom: 10px;
 }
 
 .project-card p {
-    font-size: 16px;
-    margin-bottom: 15px;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    max-width: 80%;
 }
 
-.contact form {
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 2rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    z-index: 10;
+}
+
+.carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
-    flex-direction: column;
-    max-width: 600px;
+    gap: 8px;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.carousel-dot.active {
+    background-color: #fff;
+    transform: scale(1.2);
+}
+
+/* Ajustes para o tema escuro */
+body.dark-theme .carousel-container {
+    box-shadow: 0 4px 20px rgba(245, 245, 245, 0.1);
+}
+
+body.dark-theme .project-card {
+    background-color: #222;
+    color: #f9f9f9;
+}
+body.dark-theme .project-card:not(.card1):not(.card2):not(.card3) {
+    background-image: linear-gradient(135deg, #222, #333); /* Gradiente escuro para cards dinâmicos */
+}
+
+body.dark-theme .carousel-button {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #1a1a1a;
+}
+
+body.dark-theme .carousel-button:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+body.dark-theme .carousel-dot {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+body.dark-theme .carousel-dot.active {
+    background-color: #1a1a1a;
+}
+
+/* Responsividade para o Carrossel */
+@media (max-width: 768px) {
+    .carousel-container {
+        margin: 20px auto;
+    }
+    .project-card {
+        height: 350px;
+        padding: 30px 15px;
+    }
+    .project-card h3 {
+        font-size: 2rem;
+    }
+    .project-card p {
+        font-size: 1rem;
+        max-width: 90%;
+    }
+    .carousel-button {
+        font-size: 1.5rem;
+        padding: 8px 12px;
+    }
+    .carousel-dots {
+        bottom: 10px;
+    }
+    .carousel-dot {
+        width: 8px;
+        height: 8px;
+        gap: 6px;
+    }
+}
+
+/* Estilos para a seção de Testemunhos */
+.testimonials {
+    background: linear-gradient(135deg, #1abc9c, #3498db);
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 2.25rem;
+    margin-bottom: 40px;
+    position: relative;
+    color: #fff;
+}
+
+.testimonials h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #f9f9f9;
+    margin: 10px auto;
+    border-radius: 2px;
+}
+
+.testimonials-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-.contact input, .contact textarea {
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-.contact textarea {
-    resize: vertical;
-    min-height: 150px;
-}
-
-/* Footer */
-footer {
-    background-color: #2c3e50;
-    color: #fff;
+.testimonial-card {
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 350px;
+    flex: 1 1 auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
-    padding: 20px 0;
-    margin-top: 60px;
-    box-shadow: 0 -5px 5px rgba(248, 248, 248, 0.486);
 }
 
-.social-links {
-    margin-bottom: 10px;
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
-.social-links a {
-    color: #fff;
-    font-size: 24px;
-    margin: 0 10px;
-    transition: color 0.3s ease;
+.testimonial-card p {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-style: italic;
 }
 
-.social-links a:hover {
+.testimonial-card h4 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: #f9f9f9;
+}
+
+.testimonial-role {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Tema escuro para testemunhos */
+body.dark-theme .testimonials {
+    background: linear-gradient(135deg, #111, #222);
+}
+
+body.dark-theme .testimonials h2 {
+    color: #f9f9f9;
+}
+
+body.dark-theme .testimonials h2::after {
+    background: #1abc9c;
+}
+
+body.dark-theme .testimonial-card {
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(245, 245, 245, 0.1);
+}
+
+body.dark-theme .testimonial-card h4 {
     color: #1abc9c;
+}
+
+body.dark-theme .testimonial-role {
+    color: rgba(245, 245, 245, 0.7);
+}
+
+
+/* Responsividade para a seção de Testemunhos */
+@media (max-width: 768px) {
+    .testimonials h2 {
+        font-size: 2rem;
+    }
+    .testimonials-container {
+        gap: 20px;
+    }
+    .testimonial-card {
+        padding: 25px;
+        max-width: 90%;
+    }
+    .testimonial-card p {
+        font-size: 1rem;
+    }
+    .testimonial-card h4 {
+        font-size: 1.1rem;
+    }
+    .testimonial-role {
+        font-size: 0.8rem;
+    }
+}
+
+/* Estilos para animação de rolagem */
+.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Opcional: Adicione um atraso para elementos subsequentes */
+.show.delay-1 { transition-delay: 0.1s; }
+.show.delay-2 { transition-delay: 0.2s; }
+.show.delay-3 { transition-delay: 0.3s; }
+.show.delay-4 { transition-delay: 0.4s; }
+.show.delay-5 { transition-delay: 0.5s; }
+.show.delay-6 { transition-delay: 0.6s; }
+
+
+/* Estilos para o botão Voltar ao Topo */
+.back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+    z-index: 999;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.back-to-top:hover {
+    background-color: #2980b9;
+    transform: translateY(0);
+}
+
+.back-to-top.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Tema escuro */
+body.dark-theme .back-to-top {
+    background-color: #1abc9c;
+}
+
+body.dark-theme .back-to-top:hover {
+    background-color: #16a085;
+}
+
+/* Responsividade para o botão */
+@media (max-width: 768px) {
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+}
+
+/* Estilos para validação do formulário */
+.contact input.error,
+.contact textarea.error {
+    border-color: #e74c3c;
+    box-shadow: 0 0 5px rgba(231, 76, 60, 0.5);
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 0.875rem;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    text-align: left;
+    height: 20px;
+}
+
+/* Ajustes para tema escuro */
+body.dark-theme .contact input.error,
+body.dark-theme .contact textarea.error {
+    border-color: #c0392b;
+}
+body.dark-theme .error-message {
+    color: #e74c3c;
+}
+
+/* Estilos para mensagem de carregamento/erro do GitHub */
+.loading-message,
+.error-message-github {
+    text-align: center;
+    padding: 30px;
+    font-size: 1.2rem;
+    color: #555;
+}
+
+body.dark-theme .loading-message,
+body.dark-theme .error-message-github {
+    color: #ccc;
+}
+
+/* Media query para telas muito pequenas (exemplo) */
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
+    }
+    .formacao-item {
+        padding: 15px;
+    }
+    .tecnologia-item, .habilidade-item {
+        width: 120px;
+        padding: 15px;
+    }
+    .tecnologia-item i, .habilidade-item i {
+        font-size: 40px;
+    }
+    .contact input, .contact textarea, .contact button {
+        font-size: 0.9rem;
+    }
 }

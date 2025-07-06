@@ -36,12 +36,25 @@ const translations = {
         teamWork: "Trabalho em Equipe",
         portfolioTitle: "Portfólio",
         viewDetails: "Ver Detalhes",
+        testimonialsTitle: "O que dizem sobre mim",
+        testimonial1Text: "\"Edgar demonstrou grande proatividade e uma capacidade impressionante de aprender novas tecnologias rapidamente. Sua dedicação ao projeto foi notável!\"",
+        testimonial1Author: "- Professor João Silva",
+        testimonial1Role: "Orientador de TCC, Faculdade X",
+        testimonial2Text: "\"Trabalhar com Edgar foi uma experiência fantástica. Ele é um excelente membro de equipe, sempre contribuindo com ideias inovadoras e soluções eficientes.\"",
+        testimonial2Author: "- Ana Costa",
+        testimonial2Role: "Colega de Projeto, Curso Y",
+        testimonial3Text: "\"A habilidade do Edgar em transformar conceitos complexos em designs funcionais e intuitivos é realmente impressionante. Recomendo fortemente seu trabalho!\"",
+        testimonial3Author: "- Pedro Almeida",
+        testimonial3Role: "Líder Técnico, Empresa Z",
         contactTitle: "Contato",
         yourNamePlaceholder: "Seu Nome",
         yourEmailPlaceholder: "Seu Email",
         yourMessagePlaceholder: "Sua Mensagem",
         sendMessageButton: "Enviar Mensagem",
-        footerText: "&copy; 2025 Edgar Peixoto. Todos os direitos reservados."
+        footerText: "&copy; 2025 Edgar Peixoto. Todos os direitos reservados.",
+        loadingProjects: "Carregando projetos do GitHub...",
+        errorLoadingProjects: "Não foi possível carregar os projetos. Por favor, tente novamente mais tarde.",
+        noDescription: "Nenhuma descrição disponível."
     },
     en: {
         home: "Home",
@@ -79,12 +92,25 @@ const translations = {
         teamWork: "Team Work",
         portfolioTitle: "Portfolio",
         viewDetails: "View Details",
+        testimonialsTitle: "What people say about me",
+        testimonial1Text: "\"Edgar demonstrated great proactivity and an impressive ability to quickly learn new technologies. His dedication to the project was remarkable!\"",
+        testimonial1Author: "- Professor João Silva",
+        testimonial1Role: "Advisor, University X",
+        testimonial2Text: "\"Working with Edgar was a fantastic experience. He is an excellent team member, always contributing innovative ideas and efficient solutions.\"",
+        testimonial2Author: "- Ana Costa",
+        testimonial2Role: "Project Colleague, Course Y",
+        testimonial3Text: "\"Edgar's ability to transform complex concepts into functional and intuitive designs is truly impressive. I highly recommend his work!\"",
+        testimonial3Author: "- Pedro Almeida",
+        testimonial3Role: "Tech Lead, Company Z",
         contactTitle: "Contact",
         yourNamePlaceholder: "Your Name",
         yourEmailPlaceholder: "Your Email",
         yourMessagePlaceholder: "Your Message",
         sendMessageButton: "Send Message",
-        footerText: "&copy; 2025 Edgar Peixoto. All rights reserved."
+        footerText: "&copy; 2025 Edgar Peixoto. All rights reserved.",
+        loadingProjects: "Loading GitHub projects...",
+        errorLoadingProjects: "Could not load projects. Please try again later.",
+        noDescription: "No description available."
     }
 };
 
@@ -100,12 +126,9 @@ function applyLanguage(lang) {
             }
         }
     });
-    // Atualiza o atributo lang do HTML para acessibilidade
     document.documentElement.lang = lang;
-    // Salva o idioma selecionado no localStorage
     localStorage.setItem('selectedLang', lang);
 
-    // Atualiza a classe 'active' nos botões de idioma
     document.querySelectorAll('.lang-button').forEach(button => {
         button.classList.remove('active');
     });
@@ -124,7 +147,6 @@ document.addEventListener('DOMContentLoaded', () => {
         langEnButton.addEventListener('click', () => applyLanguage('en'));
     }
 
-    // Carrega o idioma preferido do usuário ou define como português
     const savedLang = localStorage.getItem('selectedLang') || 'pt';
     applyLanguage(savedLang);
 });
