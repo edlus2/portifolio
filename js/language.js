@@ -11,7 +11,7 @@ const translations = {
         heroSubtitle: "Desenvolvedor Web | Designer Criativo 3D",
         heroButton: "Ver Projetos",
         aboutTitle: "Sobre Mim",
-        aboutText: "Olá! Me chamo Edgar e tenho 28 anos. No ano de 2023, finalizei meu curso de tecnólogo em Análise e Desenvolvimento de Sistemas. Atualmente, estou trabalhando na área industrial, mas estou buscando novas oportunidades no campo da tecnologia. Tenho paixão por desenvolvimento de software e análise de sistemas, e estou animado para explorar novas possibilidades nesse setor. Estou pronto para aplicar minhas habilidades e conhecimentos adquiridos durante minha formação e experiência profissional anterior. Mal posso esperar para fazer parte de uma equipe inovadora e contribuir para projetos empolgantes no mundo da tecnologia.",
+        aboutText: "Olá! Me chamo Edgar, sou tecnólogo em Análise e Desenvolvimento de Sistemas, com formação concluída em 2023. Tenho uma base sólida em tecnologia e uma vivência prática na área administrativa e industrial, o que me permite atuar com organização, proatividade e pensamento estratégico. Sou apaixonado por soluções tecnológicas que otimizam processos e sempre busco aprender e evoluir, seja desenvolvendo sistemas, analisando dados ou apoiando equipes administrativas. Acredito na importância da colaboração, da eficiência e da inovação no ambiente de trabalho.",
         formacaoTitle: "Formação",
         adsTitle: "Tecnólogo em Análise e Desenvolvimento de Sistemas",
         adsInstitution: "Instituição: Nome da Faculdade",
