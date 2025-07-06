@@ -40,13 +40,22 @@
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
-        margin: 0 auto;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        top: 20px;
+        position: static;
+        margin: 10px auto;
+        order: 2;
+        top: auto;
+        left: auto;
+        transform: none;
     }
     
+    /* Ajuste para o .logo em telas menores para que ele não se sobreponha */
+    nav .logo {
+        order: 1;
+        margin-bottom: 10px;
+        text-align: center;
+        width: 100%;
+    }
+
     .nav-links {
         position: fixed;
         top: 0;
@@ -73,6 +82,7 @@
     nav {
         flex-direction: column;
         align-items: center;
+        padding-top: 20px;
     }
 }
 
@@ -145,7 +155,7 @@ nav {
 }
 
 .logo {
-    font-size: 1.5rem; /* Era 24px */
+    font-size: 1.5rem;
     font-weight: 600;
 }
 
@@ -173,56 +183,10 @@ nav {
     top: 15px;
 }
 
-.theme-switch-label {
-    cursor: pointer;
-    font-size: 14px;
-    color: #fff;
-}
-
-.dark-theme .theme-switch-label {
-    color: #f9f9f9;
-}
-
-#theme-switch {
-    display: none;
-}
-
-#theme-switch + .theme-switch-label::before {
-    content: '';
-    display: inline-block;
-    width: 40px;
-    height: 20px;
-    background-color: #ccc;
-    border-radius: 10px;
-    position: relative;
-    transition: background-color 0.3s ease;
-}
-
-#theme-switch:checked + .theme-switch-label::before {
-    background-color: #1abc9c;
-}
-
-#theme-switch + .theme-switch-label::after {
-    content: '';
-    display: inline-block;
-    width: 18px;
-    height: 18px;
-    background-color: #fff;
-    border-radius: 50%;
-    position: absolute;
-    top: 1px;
-    left: 1px;
-    transition: transform 0.3s ease;
-}
-
-#theme-switch:checked + .theme-switch-label::after {
-    transform: translateX(20px);
-}
-
 /* Estilos para os botões de troca de idioma */
 .language-toggle {
     position: absolute;
-    right: 80px;
+    right: 90px;
     top: 15px;
     display: flex;
     gap: 5px;
@@ -277,12 +241,12 @@ body.dark-theme .language-toggle .lang-button.active {
 }
 
 .hero-content h1 {
-    font-size: 3rem; /* Era 48px */
+    font-size: 3rem;
     margin-bottom: 20px;
 }
 
 .hero-content p {
-    font-size: 1.25rem; /* Era 20px */
+    font-size: 1.25rem;
     margin-bottom: 30px;
 }
 
@@ -300,16 +264,17 @@ body.dark-theme .language-toggle .lang-button.active {
     background-color: #16a085;
 }
 
-/* Sobre, Portfólio e Contato */
-.about, .portfolio, .contact {
+/* Sobre, Portfólio, Testemunhos e Contato */
+.about, .portfolio, .testimonials, .contact {
     padding: 60px 20px;
     max-width: 1200px;
     margin: 0 auto;
     text-align: justify;
 }
 
-.about h2, .portfolio h2, .contact h2 {
-    font-size: 2.25rem; /* Era 36px */
+/* Centraliza os títulos de todas essas seções */
+.about h2, .portfolio h2, .testimonials h2, .contact h2 {
+    font-size: 2.25rem;
     margin-bottom: 20px;
     text-align: center;
 }
@@ -449,7 +414,7 @@ body.dark-theme .language-toggle .lang-button.active {
 }
 
 .tecnologia-item p, .habilidade-item p {
-    font-size: 1.125rem; /* Era 18px */
+    font-size: 1.125rem;
     font-weight: bold;
     margin: 0;
 }
@@ -474,7 +439,7 @@ body.dark-theme .language-toggle .lang-button.active {
 .habilidade-item:nth-child(3):hover i { color: #8e44ad; }
 .habilidade-item:nth-child(4):hover i { color: #3498db; }
 
-/* Estilos para o Carrossel de Projetos (Antigo .projects-grid) */
+/* Estilos para o Carrossel de Projetos */
 .portfolio {
     padding: 60px 20px;
     max-width: 1200px;
@@ -515,14 +480,12 @@ body.dark-theme .language-toggle .lang-button.active {
 .project-card.card1 { background-image: url(../img/3d.png); background-position: center; background-size: cover; color: #fff; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); }
 .project-card.card2 { background-image: url(../img/Paraiso.png); background-position: center; background-size: cover; color: #fff; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); }
 .project-card.card3 { background-image: url(../img/projeto\ 3.png); background-position: center; background-size: cover; color: #fff; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); }
-/* Remova ou adicione suas próprias imagens para cards dinâmicos do GitHub */
+/* Fundo padrão para projetos do GitHub se não tiverem imagem específica */
 .project-card:not(.card1):not(.card2):not(.card3) { 
-    background-image: linear-gradient(135deg, #3498db, #1abc9c); /* Fundo padrão para projetos do GitHub */
+    background-image: linear-gradient(135deg, #3498db, #1abc9c);
     color: #fff;
     text-shadow: none;
 }
-
-
 .project-card h3 {
     font-size: 2.5rem;
     margin-bottom: 10px;
@@ -594,7 +557,7 @@ body.dark-theme .project-card {
     color: #f9f9f9;
 }
 body.dark-theme .project-card:not(.card1):not(.card2):not(.card3) {
-    background-image: linear-gradient(135deg, #222, #333); /* Gradiente escuro para cards dinâmicos */
+    background-image: linear-gradient(135deg, #222, #333);
 }
 
 body.dark-theme .carousel-button {
@@ -889,7 +852,10 @@ body.dark-theme .error-message-github {
         width: 120px;
         padding: 15px;
     }
-    .tecnologia-item i, .habilidade-item i {
+    .tecnologia-item i {
+        font-size: 40px;
+    }
+    .habilidade-item i {
         font-size: 40px;
     }
     .contact input, .contact textarea, .contact button {

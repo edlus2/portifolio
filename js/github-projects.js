@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', async () => {
     const githubUsername = 'edlus2'; // **SUBSTITUA PELO SEU NOME DE USUÁRIO DO GITHUB**
-    const githubApiUrl = `https://api.github.com/users/${githubUsername}/repos?sort=pushed&per_page=6`; // Buscar os 6 mais recentes
+    const githubApiUrl = `https://api.github.com/users/${githubUsername}/repos?sort=pushed&per_page=6`;
     
     const carouselSlide = document.getElementById('github-projects-carousel');
     const prevButton = document.getElementById('carousel-prev-btn');
@@ -13,7 +13,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     function getTranslation(key) {
         const currentLang = localStorage.getItem('selectedLang') || 'pt';
-        return translations[currentLang] && translations[currentLang][key] ? translations[currentLang][key] : key;
+        // Certifica-se que 'translations' existe e tem a chave
+        return (typeof translations !== 'undefined' && translations[currentLang] && translations[currentLang][key]) ? translations[currentLang][key] : key;
     }
 
     function updateCarousel() {
@@ -87,7 +88,6 @@ document.addEventListener('DOMContentLoaded', async () => {
                 const card = document.createElement('div');
                 card.classList.add('project-card');
                 card.classList.add('animate-on-scroll');
-                // Aplica classes de delay para a animação de rolagem se houver
                 if (index < 6) card.classList.add(`delay-${index + 1}`);
 
                 card.innerHTML = `
@@ -141,6 +141,5 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
 
-    // Inicializa o carregamento dos projetos
     fetchGithubProjects();
 });
