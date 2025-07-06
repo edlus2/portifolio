@@ -67,7 +67,7 @@ const translations = {
         heroSubtitle: "Web Developer | Creative 3D Designer",
         heroButton: "View Projects",
         aboutTitle: "About Me",
-        aboutText: "Hello! My name is Edgar and I'm 28 years old. In 2023, I completed my degree in Analysis and Systems Development. Currently, I am working in the industrial sector, but I am seeking new opportunities in the technology field. I have a passion for software development and systems analysis, and I am excited to explore new possibilities in this sector. I am ready to apply my skills and knowledge acquired during my education and previous professional experience. I can't wait to be part of an innovative team and contribute to exciting projects in the world of technology.",
+        aboutText: "Hello! My name is Edgar, and I hold a degree in Systems Analysis and Development, which I completed in 2023. I have a solid foundation in technology and hands-on experience in both administrative and industrial environments, allowing me to work with organization, proactivity, and strategic thinking. I’m passionate about technological solutions that optimize processes and am always eager to learn and grow—whether by developing systems, analyzing data, or supporting administrative teams. I believe in the importance of collaboration, efficiency, and innovation in the workplace.",
         formacaoTitle: "Education",
         adsTitle: "Technologist in Analysis and Systems Development",
         adsInstitution: "Institution: University Name",
