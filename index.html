@@ -16,6 +16,7 @@
     <header>
         <nav>
             <div class="logo"><img src="img/favicon.ico" alt="image portifolio"></div>
+            
             <input type="checkbox" id="menu-toggle" class="menu-toggle">
             <label for="menu-toggle" class="hamburger">
                 <span></span>
@@ -23,18 +24,25 @@
                 <span></span>
             </label>
             <ul class="nav-links">
-                <li><a href="#home">Início</a></li>
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="#formacao">Formação</a></li>
-                <li><a href="#tecnologias">Skills/Habilidade</a></li>
-                <li><a href="#portfolio">Portfólio</a></li>
-                <li><a href="#contact">Contato</a></li>
+          
+                <li><a href="#home" data-lang-key="home">Início</a></li>
+                <li><a href="#about" data-lang-key="about">Sobre</a></li>
+                <li><a href="#formacao" data-lang-key="formacao">Formação</a></li>
+                <li><a href="#tecnologias" data-lang-key="skills">Skills/Habilidade</a></li>
+                <li><a href="#portfolio" data-lang-key="portfolio">Portfólio</a></li>
+                <li><a href="#contact" data-lang-key="contact">Contato</a></li>
+        
             </ul>
+            <div class="language-toggle">
+                <button id="lang-pt" class="lang-button active" data-lang="pt">PT</button>
+                <button id="lang-en" class="lang-button" data-lang="en">EN</button>
+            </div>
             <div class="theme-toggle">
                 <input type="checkbox" id="theme-switch">
                 <label for="theme-switch" class="theme-switch-label">
                     <i class="fas fa-sun"></i>
                     <i class="fas fa-moon"></i>
+   
                 </label>
             </div>
         </nav>
@@ -42,139 +50,152 @@
 
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Olá, eu sou Edgar</h1>
-            <p>Desenvolvedor Web | Designer Criativo 3D </p>
-            <a href="#portfolio" class="btn">Ver Projetos</a>
+            <h1 data-lang-key="heroTitle">Olá, eu sou Edgar</h1>
+            <p data-lang-key="heroSubtitle">Desenvolvedor Web | Designer Criativo 3D </p>
+            <a href="#portfolio" class="btn" data-lang-key="heroButton">Ver Projetos</a>
         </div>
     </section>
 
-
-    <section id="about" class="about">
-        <h2>Sobre Mim</h2>
-        <div class="sobre">
-        <img src="img/EU.gif" alt="Eu">
-        <p>Olá! Me chamo Edgar e tenho 28 anos. No ano de 2023, finalizei meu curso de tecnólogo em Análise e Desenvolvimento de Sistemas. Atualmente, estou trabalhando na área industrial, mas estou buscando novas oportunidades no campo da tecnologia. Tenho paixão por desenvolvimento de software e análise de sistemas, e estou animado para explorar novas possibilidades nesse setor. Estou pronto para aplicar minhas habilidades e conhecimentos adquiridos durante minha formação e experiência profissional anterior. Mal posso esperar para fazer parte de uma equipe inovadora e contribuir para projetos empolgantes no mundo da tecnologia.</p>
-        </div>
-    </section>
 
     <div class="model">
-        <!-- Modelo 3D -->
         <div id="boneco"></div>
     </div>
 
-    <section id="formacao" class="formacao">
-        <h2>Formação</h2>
-        <div class="formacao-item">
-            <h3>Tecnólogo em Análise e Desenvolvimento de Sistemas</h3>
-            <p>Instituição: Nome da Faculdade</p>
-            <p>Período: 2021 - 2023</p>
-            <p>Destaques: Desenvolvimento de sistemas web, banco de dados, engenharia de software.</p>
-        </div>
-        <div class="formacao-item">
-            <h3>Curso de Desenvolvimento Web Full Stack</h3>
-            <p>Plataforma: Rocketseat</p>
-            <p>Carga horária: 100 horas</p>
-            <p>Conclusão: 2023</p>
-        </div>
-        <div class="formacao-item">
-            <h3>Certificação AWS Cloud Practitioner</h3>
-            <p>Instituição: Amazon Web Services</p>
-            <p>Conclusão: 2022</p>
+    <section id="about" class="about">
+        <h2 data-lang-key="aboutTitle">Sobre Mim</h2>
+        <div class="sobre">
+            <img src="img/EU.gif" alt="Eu">
+            <p data-lang-key="aboutText">Olá! Me chamo Edgar e tenho 28 anos. No ano de 2023, finalizei meu curso de tecnólogo em Análise e Desenvolvimento de Sistemas. Atualmente, estou trabalhando na área industrial, mas estou buscando novas oportunidades no campo da tecnologia. Tenho paixão por desenvolvimento de software e análise de sistemas, e estou animado para explorar novas possibilidades nesse setor. Estou pronto para aplicar minhas habilidades e conhecimentos adquiridos durante minha formação e experiência profissional anterior. Mal posso esperar para fazer parte de uma equipe inovadora e contribuir para projetos empolgantes no mundo da tecnologia.</p>
         </div>
     </section>
 
+    <section id="formacao" class="formacao">
+        <h2 data-lang-key="formacaoTitle">Formação</h2>
+        <div class="formacao-item">
+            <h3 data-lang-key="adsTitle">Tecnólogo em Análise e Desenvolvimento de Sistemas</h3>
+            <p data-lang-key="adsInstitution">Instituição: Nome da Faculdade</p>
+            <p data-lang-key="adsPeriod">Período: 2021 - 2023</p>
+            <p data-lang-key="adsHighlights">Destaques: Desenvolvimento de sistemas web, banco de dados, engenharia de software.</p>
+        </div>
+        <div class="formacao-item">
+            <h3 data-lang-key="webCourseTitle">Curso de Desenvolvimento Web Full Stack</h3>
+            <p data-lang-key="webCoursePlatform">Plataforma: Rocketseat</p>
+ 
+            <p data-lang-key="webCourseWorkload">Carga horária: 100 horas</p>
+            <p data-lang-key="webCourseCompletion">Conclusão: 2023</p>
+        </div>
+        <div class="formacao-item">
+            <h3 data-lang-key="awsTitle">Certificação AWS Cloud Practitioner</h3>
+            <p data-lang-key="awsInstitution">Instituição: Amazon Web Services</p>
+            <p data-lang-key="awsCompletion">Conclusão: 2022</p>
+        </div>
+    </section>
+
+ 
     <section id="tecnologias" class="tecnologias">
-        <h2>Skills</h2>
+        <h2 data-lang-key="skillsSectionTitle">Skills</h2>
         <div class="tecnologias-container">
             <div class="tecnologia-item">
                 <i class="fab fa-js-square"></i>
-                <p>JavaScript</p>
+                <p data-lang-key="jsSkill">JavaScript</p>
             </div>
             <div class="tecnologia-item">
+      
                 <i class="fab fa-html5"></i>
-                <p>HTML5</p>
+                <p data-lang-key="htmlSkill">HTML5</p>
             </div>
             <div class="tecnologia-item">
                 <i class="fab fa-css3-alt"></i>
-                <p>CSS3</p>
+                <p data-lang-key="cssSkill">CSS3</p>
             </div>
+ 
             <div class="tecnologia-item">
                 <i class="fab fa-python"></i>
-                <p>Python</p>
+                <p data-lang-key="pythonSkill">Python</p>
             </div>
         </div>
     </section>
     
     <section id="habilidades" class="habilidades">
-        <h2>Habilidades</h2>
+        <h2 data-lang-key="abilitiesSectionTitle">Habilidades</h2>
         <div class="habilidades-container">
+   
             <div class="habilidade-item">
                 <i class="fas fa-chart-line"></i>
-                <p>Análise de Dados</p>
+                <p data-lang-key="dataAnalysis">Análise de Dados</p>
             </div>
             <div class="habilidade-item">
                 <i class="fas fa-print"></i>
-                <p>Impressão 3D</p>
+           
+                <p data-lang-key="3dPrint">Impressão 3D</p>
             </div>
             <div class="habilidade-item">
                 <i class="fas fa-cube"></i>
-                <p>Modelagem 3D</p>
+                <p data-lang-key="3dModeling">Modelagem 3D</p>
             </div>
             <div class="habilidade-item">
+         
                 <i class="fas fa-users"></i>
-                <p>Trabalho em Equipe</p>
+                <p data-lang-key="teamWork">Trabalho em Equipe</p>
             </div>
         </div>
     </section>
     
     <section id="portfolio" class="portfolio">
-        <h2>Portfólio</h2>
+        <h2 data-lang-key="portfolioTitle">Portfólio</h2>
         <div class="projects-grid">
             <div class="project-card  card1">
+       
                 <br><br><br><br>
-                <a href="https://edlus2.github.io/3Dprinting/" class="btn">Ver Detalhes</a>
+                <a href="https://edlus2.github.io/3Dprinting/" class="btn" data-lang-key="viewDetails">Ver Detalhes</a>
             </div>
             <div class="project-card  card2">
                 <br><br><br><br>
-                <a href="https://edlus2.github.io/projeto/Praticas/10.06/index.html" class="btn">Ver Detalhes</a>
+                <a href="https://edlus2.github.io/projeto/Praticas/10.06/index.html" class="btn" data-lang-key="viewDetails">Ver Detalhes</a>
+          
             </div>
             <div class="project-card card3">
                 <br><br><br><br>
-                <a href="https://edlus2.github.io/projeto/social/index.html" class="btn">Ver Detalhes</a>
+                <a href="https://edlus2.github.io/projeto/social/index.html" class="btn" data-lang-key="viewDetails">Ver Detalhes</a>
             </div>
             <div class="project-card card4">
                 <br><br><br><br>
-                <a href="#" class="btn">Ver Detalhes</a>
+       
+                <a href="#" class="btn" data-lang-key="viewDetails">Ver Detalhes</a>
             </div>
             <div class="project-card card5">
                 <br><br><br><br>
-                <a href="#" class="btn">Ver Detalhes</a>
+                <a href="#" class="btn" data-lang-key="viewDetails">Ver Detalhes</a>
             </div>
             <div class="project-card card6">
+ 
                 <br><br><br><br>
-                <a href="./diplo/index.html" class="btn">Ver Detalhes</a>
+                <a href="#" class="btn" data-lang-key="viewDetails">Ver Detalhes</a>
             </div>
         </div>
     </section>
 
     <section id="contact" class="contact">
-        <h2>Contato</h2>
+        <h2 data-lang-key="contactTitle">Contato</h2>
         <form action="https://formsubmit.co/edgar.ludis2@gmail.com" method="POST">
-            <input type="text" name="name" placeholder="Seu Nome" required>
-            <input type="email" name="email" placeholder="Seu Email" required>            <textarea name="message" placeholder="Sua Mensagem" required></textarea>
-            <button type="submit" class="btn">Enviar Mensagem</button>
+            <input type="text" name="name" placeholder="Seu Nome" required data-lang-key="yourNamePlaceholder">
+ 
+            <input type="email" name="email" placeholder="Seu Email" required data-lang-key="yourEmailPlaceholder">            <textarea name="message" placeholder="Sua Mensagem" required data-lang-key="yourMessagePlaceholder"></textarea>
+            <button type="submit" class="btn" data-lang-key="sendMessageButton">Enviar Mensagem</button>
         </form>
     </section>
 
     <footer>
         <div class="social-links">
             <a href="https://github.com/edlus2" target="_blank"><i class="fab fa-github"></i></a>
+            
             <a href="https://www.linkedin.com/in/edlus2/" target="_blank"><i class="fab fa-linkedin"></i></a>
         </div>
-        <p>&copy; 2025 Edgar Peixoto. Todos os direitos reservados.</p>
+        <p data-lang-key="footerText">&copy; 2025 Edgar Peixoto. Todos os direitos reservados.</p>
     </footer>
 
     <script src="js/dark.js"></script>
     <script defer src="js/3d.js"></script>
+    <script src="js/language.js"></script>
 </body>
 </html>

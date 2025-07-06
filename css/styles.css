@@ -18,7 +18,8 @@
     display: block;
     height: 3px;
     width: 100%;
-    background: #fff; /* Cor do ícone */
+    background: #fff;
+/* Cor do ícone */
     border-radius: 3px;
     transition: all 0.3s ease;
 }
@@ -40,6 +41,11 @@
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
+        margin: 0 auto; /* Centraliza horizontalmente */
+        position: absolute; /* Permite posicionamento absoluto */
+        left: 50%; /* Move para o centro horizontal */
+        transform: translateX(-50%); /* Ajusta para centralizar perfeitamente */
+        top: 20px; /* Ajuste a distância do topo se necessário */
     }
     
     .nav-links {
@@ -48,7 +54,8 @@
         left: 0;
         width: 100%;
         height: 100vh;
-        background: #1a1a1a; /* Cor de fundo do menu */
+        background: #1a1a1a;
+/* Cor de fundo do menu */
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -63,6 +70,12 @@
     
     .nav-links li {
         margin: 15px 0;
+    }
+
+    /* Se o nav for um flex container em telas menores, ajuste sua direção */
+    nav {
+        flex-direction: column;
+        align-items: center;
     }
 }
 
@@ -123,7 +136,8 @@ header {
     box-shadow: 0 5px 5px rgba(248, 248, 248, 0.486);
     position: sticky;
     top: 0;
-    z-index: 1000; /* Para ficar sobre os outros elementos */
+    z-index: 1000;
+/* Para ficar sobre os outros elementos */
 }
 
 nav {
@@ -210,6 +224,56 @@ nav {
     transform: translateX(20px);
 }
 
+/* Estilos para os botões de troca de idioma */
+.language-toggle {
+    position: absolute;
+    right: 80px; /* Ajuste para não colidir com o theme-toggle */
+    top: 15px;
+    display: flex;
+    gap: 5px;
+}
+
+.language-toggle .lang-button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.language-toggle .lang-button:hover {
+    background-color: #2980b9;
+}
+
+.language-toggle .lang-button.active {
+    background-color: #1abc9c; /* Cor para o idioma ativo */
+    font-weight: bold;
+}
+
+/* Ajuste para tema escuro */
+body.dark-theme .language-toggle .lang-button {
+    background-color: #555;
+    color: #f9f9f9;
+}
+
+body.dark-theme .language-toggle .lang-button.active {
+    background-color: #1abc9c;
+}
+
+/* Ajuste responsivo para os botões de idioma se necessário */
+@media (max-width: 768px) {
+    .language-toggle {
+        position: static; /* Remove o posicionamento absoluto em telas menores */
+        margin: 10px auto; /* Centraliza abaixo do hambúrguer e tema */
+        order: 3; /* Define a ordem para aparecer depois do hambúrguer e tema no flexbox */
+        justify-content: center;
+    }
+}
+
+
 /* Hero section */
 .hero {
     background: linear-gradient(135deg, #3498db, #1abc9c);
@@ -243,19 +307,19 @@ nav {
 }
 
 .model {
-    margin: 0; /* Use 0 em vez de 'none' para margin */
+    margin: 0;
     padding: 0;
     height: 500px;
     width: auto;
     background: linear-gradient(135deg, #3498db, #1abc9c);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover; /* Alterado de 'contain' para 'cover' */
+    background-size: cover;
 }
 
 canvas {
     display: block;
-    margin: auto;  
+    margin: auto;
 }
 
 /* Sobre, Portfólio e Contato */
@@ -276,9 +340,9 @@ canvas {
     text-align: center;
     align-items: center;
     display: flex;
-    flex-direction: row-reverse; /* Alinha os elementos horizontalmente */
-    justify-content: center; /* Centraliza os elementos horizontalmente */
-    gap: 20px; /* Adiciona um espaço entre a imagem e o texto */
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 20px;
 }
 
 .sobre img {
@@ -288,12 +352,12 @@ canvas {
 /* Media query para telas menores */
 @media (max-width: 900px) {
     .sobre {
-        flex-direction: column; /* Alinha os elementos verticalmente */
+        flex-direction: column;
     }
 
     .sobre img {
-        height: auto; /* Ajusta a altura da imagem para se adaptar ao layout */
-        max-width: 100%; /* Garante que a imagem não ultrapasse a largura da tela */
+        height: auto;
+        max-width: 100%;
     }
 }
 
@@ -367,7 +431,6 @@ canvas {
     padding: 50px 20px;
     text-align: center;
     width: 100%;
-   
     margin: auto;
 }
 
