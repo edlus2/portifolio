@@ -486,6 +486,7 @@ body.dark-theme .language-toggle .lang-button.active {
     color: #fff;
     text-shadow: none;
 }
+
 .project-card h3 {
     font-size: 2.5rem;
     margin-bottom: 10px;
@@ -701,8 +702,46 @@ body.dark-theme .testimonial-card h4 {
 body.dark-theme .testimonial-role {
     color: rgba(245, 245, 245, 0.7);
 }
+.social-links a {
+    color: #fff;
+    font-size: 32px; /* Aumentado de 24px para 32px para um tamanho maior */
+    margin: 0 15px; /* Aumenta um pouco o espaçamento entre os ícones */
+    transition: color 0.3s ease;
+}
+footer {
+    background-color: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 40px 0; /* Aumentado de 20px para 40px para mais padding vertical */
+    margin-top: 0;
+    /* Adiciona uma sombra mais escura para um contraste visual com a página */
+    box-shadow: 0 -8px 15px rgba(0, 0, 0, 0.3); /* Sombra mais destacada */
+    width: 100%;
+}
+.contact input,
+.contact textarea {
+    padding: 15px; /* Aumenta o padding interno para aumentar a altura e largura visual */
+    margin-bottom: 20px; /* Aumenta um pouco o espaçamento entre os campos */
+    border: 1px solid #c0c0c0; /* Borda um pouco mais visível */
+    border-radius: 8px; /* Mais arredondamento para um visual mais suave */
+    font-size: 1.1rem; /* Aumenta um pouco o tamanho da fonte interna */
+    width: 100%;
+    box-sizing: border-box;
+}
 
+body.dark-theme .contact input,
+body.dark-theme .contact textarea {
+    background-color: #3e3e3e; /* Fundo um pouco mais escuro no tema dark */
+    color: #f9f9f9;
+    border-color: #666; /* Borda mais visível no tema dark */
+}
 
+#testimonials{
+    max-width: none;
+}
+.contact textarea {
+    min-height: 180px; /* Aumenta a altura mínima da textarea para ser mais imponente */
+}
 /* Responsividade para a seção de Testemunhos */
 @media (max-width: 768px) {
     .testimonials h2 {
